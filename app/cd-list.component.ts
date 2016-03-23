@@ -23,7 +23,7 @@ import {SoldPipe} from './sold.pipe';
     [cd]="currentCd">
   </cd-display>
   <edit-cd-details *ngIf="selectedCd" [cd]="selectedCd">
-  <edit-cd-details>
+  </edit-cd-details>
   <new-cd (onSubmitNewCd)="createCd($event)"></new-cd>
 
   `

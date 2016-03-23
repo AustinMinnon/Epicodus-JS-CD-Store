@@ -13,7 +13,7 @@ import {Cd} from './cd.model';
     <input placeholder="Artist" class="col-sm-2 input-md" #newArtist>
     <input placeholder="Genre" class="col-sm-2 input-md" #newGenre>
     <input placeholder="Price" class="col-sm-2 input-md" #newPrice>
-    <button (click)="addCd(newName, newArtist, newGenre, newPrice)" class="btn-success btn-lg add-button">Add</button>
+    <button (click)="addCd(newName, newArtist, newGenre, newPrice)" class="btn-info btn-xs add-button">Add</button>
   </div>
   `
 })
