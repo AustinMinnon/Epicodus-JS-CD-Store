@@ -21,10 +21,10 @@ export class AppComponent {
   public cds: Cd[];
   constructor() {
     this.cds = [
-      new Cd("George Clinton and the Parliment Funkadelics", "George Clinton", "Funk", 5, 0),
-      new Cd("Chocolate Starfish and the Hot Dog Flavored Water", "Limp Bizkit", "Rock", 5, 1),
-      new Cd("Hybrid Theory", "Linkin Park", "Rock", 5, 2),
-      new Cd("The 18th Letter", "Rakim", "Rap", 5, 3)
+      new Cd("George Clinton and the Parliment Funkadelics", "George Clinton", "Funk", "5", 0),
+      new Cd("Chocolate Starfish and the Hot Dog Flavored Water", "Limp Bizkit", "Rock", "5", 1),
+      new Cd("Hybrid Theory", "Linkin Park", "Rock", "5", 2),
+      new Cd("The 18th Letter", "Rakim", "Rap", "5", 3)
     ];
   }
   cdWasSelected(clickedCd: Cd): void {

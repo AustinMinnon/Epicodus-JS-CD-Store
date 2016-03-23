@@ -3,7 +3,7 @@ import { CdComponent } from './cd.component';
 import { Cd } from './cd.model';
 import { EditCdDetailsComponent } from './edit-cd-details.component';
 import { NewCdComponent } from './new-cd.component';
-import {DonePipe} from './done.pipe';
+import {SoldPipe} from './sold.pipe';
 
 @Component({
   selector: 'cd-list',
@@ -13,18 +13,14 @@ import {DonePipe} from './done.pipe';
   directives: [CdComponent, EditCdDetailsComponent, NewCdComponent],
   template:`
   <select (change)="onChange($event.target.value)" class="filter">
-    <option value="all" selected="selected">Show All Genres</option>
-    <option value="rock">Rock</option>
-    <option value="funk">Funk</option>
-    <option value="rap">Rap</option>
-    <option value="country">Country</option>
-    <option value="hip-hop">Hip-Hop</option>
-    <option value="reggae">Reggae</option>
+  <option value="all">Show All</option>
+  <option value="sold">Show Sold</option>
+  <option value="notSold" selected="selected">Show Not Sold</option>
   </select>
-  <cd-display *ngFor="#currentCd of cdList | genre:filterGenre"
+  <cd-display *ngFor="#currentCd of cdList | sold:filterSold"
     (click)="cdClicked(currentCd)"
     [class.selected]="currentCd === selectedCd"
-    [task]="currentCd">
+    [cd]="currentCd">
   <cd-display>
   <edit-cd-details *ngIf="selectedCd" [cd]="selectedCd">
   <edit-cd-details>
@@ -37,7 +33,7 @@ export class CdListComponent {
   public cdList: Cd[];
   public onCdSelect: EventEmitter<Cd>;
   public selectedCd: Cd;
-  public filterGenre: string = "all";
+  public filterSold: string = "notSold";
   constructor() {
     this.onCdSelect = new EventEmitter();
   }
@@ -45,12 +41,12 @@ export class CdListComponent {
     this.selectedCd = clickedCd;
     this.onCdSelect.emit(clickedCd);
   }
-  createCd(name: string, artist: string, genre: string, price: number): void{
+  createCd(theInfo: string[]): void{
     this.cdList.push(
-      new Cd(name, artist, genre, price, this.Cdlist.length)
+      new Cd(theInfo[0], theInfo[1], theInfo[2], theInfo[3], this.cdList.length)
     );
   }
   onChange(filterOption) {
-    this.filterGenre = filterOption;
+    this.filterSold = filterOption;
   }
 }
