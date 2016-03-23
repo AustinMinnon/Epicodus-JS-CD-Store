@@ -21,7 +21,7 @@ import {SoldPipe} from './sold.pipe';
     (click)="cdClicked(currentCd)"
     [class.selected]="currentCd === selectedCd"
     [cd]="currentCd">
-  <cd-display>
+  </cd-display>
   <edit-cd-details *ngIf="selectedCd" [cd]="selectedCd">
   <edit-cd-details>
   <new-cd (onSubmitNewCd)="createCd($event)"></new-cd>
