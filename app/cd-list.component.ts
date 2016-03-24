@@ -3,6 +3,7 @@ import { CdComponent } from './cd.component';
 import { Cd } from './cd.model';
 import { EditCdDetailsComponent } from './edit-cd-details.component';
 import { NewCdComponent } from './new-cd.component';
+import { CartComponent } from './cart.component';
 import {SoldPipe} from './sold.pipe';
 
 @Component({
@@ -10,18 +11,30 @@ import {SoldPipe} from './sold.pipe';
   inputs:['cdList'],
   outputs: ['onCdSelect'],
   pipes: [SoldPipe],
-  directives: [CdComponent, EditCdDetailsComponent, NewCdComponent],
+  directives: [CdComponent, EditCdDetailsComponent, NewCdComponent, CartComponent],
   template:`
   <select (change)="onChange($event.target.value)" class="filter">
-  <option value="all">Show All</option>
   <option value="sold">Show Sold</option>
   <option value="notSold" selected="selected">Show Not Sold</option>
   </select>
-  <cd-display *ngFor="#currentCd of cdList | sold:filterSold"
-    (click)="cdClicked(currentCd)"
-    [class.selected]="currentCd === selectedCd"
-    [cd]="currentCd">
-  </cd-display>
+<div class="row">
+  <div class="col-lg-7">
+
+    <cd-display *ngFor="#currentCd of cdList | sold:filterSold"
+      (click)="cdClicked(currentCd)"
+      [class.selected]="currentCd === selectedCd"
+      [cd]="currentCd">
+    </cd-display>
+  </div>
+  <div class="col-sm-5">
+      <h2>Shopping Cart:</h2>
+    <cart-display *ngFor="#currentCd of cdList | sold:filterNotSold"
+      (click)="cdClicked(currentCd)"
+      [class.selected]="currentCd === selectedCd"
+      [cd]="currentCd">
+    </cart-display>
+  </div>
+</div>
   <edit-cd-details *ngIf="isEdited" [cd]="selectedCd" (closeEdit)="onEdit()"></edit-cd-details>
   <new-cd (onSubmitNewCd)="createCd($event)"></new-cd>
 
@@ -33,6 +46,7 @@ export class CdListComponent {
   public onCdSelect: EventEmitter<Cd>;
   public selectedCd: Cd;
   public filterSold: string = "notSold";
+  public filterNotSold: string = "sold";
   public isEdited: boolean= false;
   constructor() {
     this.onCdSelect = new EventEmitter();
@@ -40,9 +54,6 @@ export class CdListComponent {
   onEdit() {
     console.log('onEdit');
     this.isEdited = false;
-  }
-
-  editCd(cd: Cd) {
   }
 
   cdClicked(clickedCd: Cd): void {

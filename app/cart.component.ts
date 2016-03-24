@@ -2,19 +2,19 @@ import { Component } from 'angular2/core';
 import { Cd } from './cd.model';
 
 @Component({
-    selector: 'cd-display',
+    selector: 'cart-display',
     inputs: ['cd'],
   template: `
   <div>
     <input *ngIf="cd.sold" type="checkbox" checked (click)="toggleSold(false)"/>
     <input *ngIf="!cd.sold" type="checkbox" (click)="toggleSold(true)"/>
-    <label>{{ cd.name + " By: " + cd.artist + " Genre: " + cd.genre + " Price: $" + cd.price }}</label>
+    <label>{{ cd.name + " Price: $" + cd.price }}</label>
 
   </div>
   `
 })
 
-export class CdComponent {
+export class CartComponent {
   public cd: Cd;
   toggleSold(setState: boolean) {
     this.cd.sold = setState;
