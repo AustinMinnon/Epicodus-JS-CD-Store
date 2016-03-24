@@ -6,18 +6,19 @@ import {Cd} from './cd.model';
   inputs: ['cd'],
   outputs: ['closeEdit'],
   template: `
-    <div class="cd-form" id="show">
-      <div id="edit">
-        <h3>Edit CD Details: </h3>
-        <input [(ngModel)]="cd.name" class="col-sm-2 input-md cd-form"/>
-        <input [(ngModel)]="cd.artist" class="col-sm-2 input-md cd-form"/>
-        <input [(ngModel)]="cd.genre" class="col-sm-1 input-md cd-form"/>
-        <input [(ngModel)]="cd.price" class="col-sm-1 input-md cd-form"/>
-        <button (click)="submitEdit()" class="btn-warning btn-xs">save</button>
-      </div>
+  <div class="cd-form" id="show">
+    <div>
+      <h3>Edit CD Details: </h3>
+      <input [(ngModel)]="cd.name" class="col-sm-2 input-md cd-form"/>
+      <input [(ngModel)]="cd.artist" class="col-sm-2 input-md cd-form"/>
+      <input [(ngModel)]="cd.genre" class="col-sm-1 input-md cd-form"/>
+      <input [(ngModel)]="cd.price" class="col-sm-1 input-md cd-form"/>
+      <button (click)="submitEdit()" class="btn-warning btn-xs">save</button>
     </div>
+  </div>
   `
 })
+
 export class EditCdDetailsComponent {
   public cd: Cd;
   public closeEdit: EventEmitter<Object>;
@@ -29,5 +30,3 @@ export class EditCdDetailsComponent {
     this.closeEdit.emit(new Object());
   }
 }
-
-// <button (click)="addCd(newName, newArtist, newGenre, newPrice)" class="btn-info btn-xs add-button">Add</button>

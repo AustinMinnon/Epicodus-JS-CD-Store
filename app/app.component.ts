@@ -2,19 +2,20 @@ import { Component } from 'angular2/core';
 import { CdListComponent } from './cd-list.component';
 import { Cd } from './cd.model';
 
-// defining annotation aka "decorator"
 @Component({
   selector: 'my-app',
   directives: [CdListComponent],
   template: `
   <div class="container">
-    <h1>Obsolete CD's For Sale!!</h1>
+    <div class="animate">
+      <h1>The Ulitmate Obsolete CD Library</h1>
+    </div>
     <cd-list
      [cdList]="cds"
      (onCdSelect)="cdWasSelected($event)">
      </cd-list>
   </div>
-  ` //uses backticks
+  `
 })
 
 export class AppComponent {

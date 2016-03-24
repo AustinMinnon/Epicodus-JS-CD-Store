@@ -9,7 +9,6 @@ import { Cd } from './cd.model';
     <input *ngIf="cd.sold" type="checkbox" checked (click)="toggleSold(false)"/>
     <input *ngIf="!cd.sold" type="checkbox" (click)="toggleSold(true)"/>
     <label>{{ cd.name + " Price: $" + cd.price }}</label>
-
   </div>
   `
 })

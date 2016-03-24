@@ -6,9 +6,7 @@ import {Cd} from './cd.model';
   selector: 'new-cd',
   outputs: ['onSubmitNewCd'],
   template: `
-
   <div class="cd-form">
-  
     <h3>Create Cd:</h3>
     <input placeholder="Name" class="col-sm-2 input-md" #newName>
     <input placeholder="Artist" class="col-sm-2 input-md" #newArtist>
