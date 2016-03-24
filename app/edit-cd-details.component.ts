@@ -6,7 +6,7 @@ import {Cd} from './cd.model';
   inputs: ['cd'],
   template: `
     <div class="cd-form">
-      <h3>Edit Name: </h3>
+      <h3>Edit CD Details: </h3>
       <input [(ngModel)]="cd.name" class="col-sm-8 input-lg cd-form"/>
     </div>
   `

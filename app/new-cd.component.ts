@@ -8,11 +8,12 @@ import {Cd} from './cd.model';
   template: `
 
   <div class="cd-form">
+  
     <h3>Create Cd:</h3>
     <input placeholder="Name" class="col-sm-2 input-md" #newName>
     <input placeholder="Artist" class="col-sm-2 input-md" #newArtist>
-    <input placeholder="Genre" class="col-sm-2 input-md" #newGenre>
-    <input placeholder="Price" class="col-sm-2 input-md" #newPrice>
+    <input placeholder="Genre" class="col-sm-1 input-md" #newGenre>
+    <input placeholder="Price" class="col-sm-1 input-md" #newPrice>
     <button (click)="addCd(newName, newArtist, newGenre, newPrice)" class="btn-info btn-xs add-button">Add</button>
   </div>
   `

@@ -8,7 +8,7 @@ import { Cd } from './cd.model';
   <div>
     <input *ngIf="cd.sold" type="checkbox" checked (click)="toggleSold(false)"/>
     <input *ngIf="!cd.sold" type="checkbox" (click)="toggleSold(true)"/>
-    <label>{{ cd.name }}</label>
+    <label>{{ cd.name + " By: " + cd.artist + " Genre: " + cd.genre + " Price: $" + cd.price }}</label>
   </div>
   `
 })
