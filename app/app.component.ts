@@ -19,6 +19,7 @@ import { Cd } from './cd.model';
 
 export class AppComponent {
   public cds: Cd[];
+  public onCd
   constructor() {
     this.cds = [
       new Cd("George Clinton and the Parliment Funkadelics", "George Clinton", "Funk", "5", 0),

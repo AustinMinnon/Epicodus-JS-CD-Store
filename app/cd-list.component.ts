@@ -22,8 +22,7 @@ import {SoldPipe} from './sold.pipe';
     [class.selected]="currentCd === selectedCd"
     [cd]="currentCd">
   </cd-display>
-  <edit-cd-details *ngIf="selectedCd" [cd]="selectedCd">
-  </edit-cd-details>
+  <edit-cd-details *ngIf="isEdited" [cd]="selectedCd" (closeEdit)="onEdit()"></edit-cd-details>
   <new-cd (onSubmitNewCd)="createCd($event)"></new-cd>
 
   `
@@ -34,10 +33,20 @@ export class CdListComponent {
   public onCdSelect: EventEmitter<Cd>;
   public selectedCd: Cd;
   public filterSold: string = "notSold";
+  public isEdited: boolean= false;
   constructor() {
     this.onCdSelect = new EventEmitter();
   }
+  onEdit() {
+    console.log('onEdit');
+    this.isEdited = false;
+  }
+
+  editCd(cd: Cd) {
+  }
+
   cdClicked(clickedCd: Cd): void {
+    this.isEdited = true;
     this.selectedCd = clickedCd;
     this.onCdSelect.emit(clickedCd);
   }
