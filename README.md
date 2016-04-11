@@ -23,7 +23,7 @@ _A website where a user can browse albums and add them to cart._
 _Javascript, Angular, Node, Bower, Gulp, SASS, Bootstrap_
 
 ##GitHub Pages
-http://austinminnon.github.io/Epicodus-Js-Ember-Q-A
+http://austinminnon.github.io/Epicodus-JS-CD-Store
 
 
 ### License
