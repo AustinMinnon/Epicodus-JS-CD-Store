@@ -1,7 +1,7 @@
 # Compact Disc Store
 
 A website where a user can add albums to their cart
-### By _**Austin Minnon**_
+### By _**Austin Minnon & Chris Kuiper**_
 
 ## Prerequisites
 
@@ -33,11 +33,11 @@ You will need the following things properly installed on your computer.
 _Javascript, Ember, EmberFire, Node, Bower, Bootstrap_
 
 ##GitHub Pages
-http://austinminnon.github.io/Epicodus-Js-Ember-Q-A
+http://austinminnon.github.io/Epicodus-JS-CD-Store
 
 
 ### License
 
 _MIT license_
 
-Copyright (c) 2016 _**Austin Minnon**_
+Copyright (c) 2016 _**Austin Minnon & Chris Kuiper**_
