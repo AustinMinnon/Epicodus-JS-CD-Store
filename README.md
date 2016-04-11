@@ -1,43 +1,33 @@
-# Compact Disc Store
+# CD Store
 
-A website where a user can add albums to their cart
-### By _**Austin Minnon & Chris Kuiper**_
+Allows user to view albums in the "store", and add those they want into their cart
+## Description
+_A website where a user can browse albums and add them to cart._
 
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+### By _**Austin Minnon**_
 
 ## Setup & Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
-* `ember i emberfire`
-* `ember i ember-bootstrap`
-* `ember build`
-* `ember s`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* _Clone this repository._
+* _Run the following commands in terminal:_
+* _npm install_
+* _bower install_
+* _gulp build_
+* _gulp serve_
 
 ## Bugs
  No known bugs
 
 ## Technologies Used
 
-_Javascript, Ember, EmberFire, Node, Bower, Bootstrap_
+_Javascript, Angular, Node, Bower, Gulp, SASS, Bootstrap_
 
 ##GitHub Pages
-http://austinminnon.github.io/Epicodus-JS-CD-Store
+http://austinminnon.github.io/Epicodus-Js-Ember-Q-A
 
 
 ### License
 
 _MIT license_
 
-Copyright (c) 2016 _**Austin Minnon & Chris Kuiper**_
+Copyright (c) 2016 _**Austin Minnon**_
